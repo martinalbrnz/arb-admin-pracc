@@ -10,7 +10,15 @@ import { SalesComponent } from '@modules/sales/sales.component'
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, LoginComponent, AuthComponent, ClientsComponent, ProductsComponent, SalesComponent],
+  imports: [
+    CommonModule, 
+    RouterOutlet, 
+    LoginComponent, 
+    AuthComponent, 
+    ClientsComponent, 
+    ProductsComponent, 
+    SalesComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

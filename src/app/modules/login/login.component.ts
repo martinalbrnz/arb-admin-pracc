@@ -11,22 +11,25 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 
 export class LoginComponent {
-    loginForm = new FormGroup({
-      username : new FormControl('', Validators.compose([
+
+  loginForm = new FormGroup({
+    username : new FormControl<string>('',[
         Validators.required,
         Validators.minLength(5),
         Validators.maxLength(10)
-      ])),
-
-      password : new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(15)
-      ]))
+      ]),
+    password : new FormControl<string>('', 
+    [
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(15)
+    ])
     
   })
   onSubmit() {
     console.warn(this.loginForm.value);
+    this.loginForm.reset();
+
   }
 
 }

@@ -16,6 +16,6 @@ export class SidebarItemComponent {
 }
 
 export interface RouteItem {
-  text: string
-  link: string
+  label: string
+  href: string
 }

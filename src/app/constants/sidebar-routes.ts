@@ -3,6 +3,7 @@ import { RoutesEnum } from "./routes";
 
 
 export const routes: sidebarRoutes[] = [
-    { label: "Recurso 1", href: RoutesEnum.Recurso1 },
-    { label: "Recurso 2", href: RoutesEnum.Recurso2 },
+    { label: "Clients", href: RoutesEnum.Clients },
+    { label: "Products", href: RoutesEnum.Products },
+    { label: "Sales", href: RoutesEnum.Sales }
 ]

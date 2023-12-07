@@ -10,8 +10,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SidebarItemComponent {
 
-  @Input() label?: string;
-  @Input() href?: string;
+  @Input() itemData!: RouteItem
 
 }
 

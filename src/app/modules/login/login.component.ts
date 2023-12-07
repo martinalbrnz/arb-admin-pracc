@@ -1,16 +1,19 @@
-import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { Component } from '@angular/core'
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
+import { LoginService } from '@services/login/login.service'
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
+  providers: [LoginService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 
 export class LoginComponent {
+  constructor (private loginService: LoginService) {}
 
   loginForm = new FormGroup({
     username : new FormControl<string>('',[
@@ -26,10 +29,20 @@ export class LoginComponent {
     ])
     
   })
+
   onSubmit() {
-    console.warn(this.loginForm.value);
-    this.loginForm.reset();
+    const {username, password } = this.loginForm.value
 
+    if (!username || !password) return
+
+    this.loginService.login(username, password).subscribe({
+      next: (value) => {
+        console.log(value) 
+        // redirect to application
+      },
+      error: (error) => {
+        console.error(error)
+      }
+    })
   }
-
 }

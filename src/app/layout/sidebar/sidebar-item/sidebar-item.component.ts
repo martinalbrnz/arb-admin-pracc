@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar-item',
@@ -10,4 +10,12 @@ import { CommonModule } from '@angular/common';
 })
 export class SidebarItemComponent {
 
+  @Input() label?: string;
+  @Input() href?: string;
+
+}
+
+export interface RouteItem {
+  text: string
+  link: string
 }

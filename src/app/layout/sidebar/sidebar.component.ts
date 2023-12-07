@@ -1,6 +1,6 @@
-import { CommonModule, NgClass } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { CommonModule, NgClass } from '@angular/common'
+import { Component } from '@angular/core'
+import { RouterLink } from '@angular/router'
 
 @Component({
   selector: 'app-sidebar',
@@ -10,10 +10,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
-  isSidebarOpen = false;
+  isSidebarOpen = false
 
   toggleSidebar() {
-    console.log(this.isSidebarOpen);
-    this.isSidebarOpen = !this.isSidebarOpen;
+    console.log(this.isSidebarOpen)
+    this.isSidebarOpen = !this.isSidebarOpen
   }
 }

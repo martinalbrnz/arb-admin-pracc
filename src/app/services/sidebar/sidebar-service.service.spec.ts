@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { SidebarService } from './sidebar-service.service';
 
 describe('SidebarServiceService', () => {
-  let service: SidebarServiceService;
+  let service: SidebarService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

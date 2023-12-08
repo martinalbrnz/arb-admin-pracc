@@ -1,1 +1,14 @@
-<p> sidebar-item works!</p>
+<div class="flex flex-col items-center justify-center h-[80svh] p-5">
+  <div class="space-y-4" *ngIf="isOpen">
+    <ul *ngFor="let nav of SidebarRoutes">
+      <li>
+        <a routerLink="{{ nav.href }}">{{ nav.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="space-y-4" *ngIf="!isOpen">
+    <ul *ngFor="let nav of SidebarRoutes">
+      <li>{{ nav.icon }}</li>
+    </ul>
+  </div>
+</div>

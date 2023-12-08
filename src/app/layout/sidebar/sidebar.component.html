@@ -1,41 +1,26 @@
-<!-- Sin desplegar Mobile -->
-
-<div class="flex md:hidden">
-  <div class="max-w-xs w-auto bg-violet-300">
-    <button
-      *ngIf="!isSidebarOpen"
-      class="flex p-2 text-2xl"
-      (click)="toggleSidebar()"
-    >
-      ☰
-    </button>
-  </div>
-</div>
-
-<!-- Sin desplegar Desktop -->
-
-<div class="hidden md:flex bg-violet-500">
-  <div *ngIf="!isSidebarOpen" class="h-[100svh] bg-violet-300 w-[50px]">
-    <button class="flex p-2 text-2xl" (click)="toggleSidebar()">☰</button>
-    <div class="flex flex-col p-5 justify-center h-[80svh]">
-      <ul class="space-y-4">
-        <li>C</li>
-        <li>P</li>
-        <li>V</li>
+<div class="flex">
+  <div
+    *ngIf="!isSidebarOpen()"
+    class="md:h-[100svh] bg-violet-300 w-auto max-w-xs md:w-[50px]"
+  >
+    <button class="flex p-2 text-2xl" (click)="Open()">☰</button>
+    <div class="hidden md:flex flex-col justify-center h-[80svh] p-5 space-y-4">
+      <ul *ngFor="let nav of SidebarNavegation">
+        <li>{{ nav.icon }}</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- Desplegado Mobile/Desktop -->
-
-<div class="bg-violet-300 h-[100svh] w-full" *ngIf="isSidebarOpen">
-  <button class="flex p-2 text-2xl" (click)="toggleSidebar()">✕</button>
-  <div class="flex flex-col pr-5 pl-5 items-center justify-center h-[80svh]">
-    <ul class="space-y-4">
-      <li><a routerLink="/clients">Clientes</a></li>
-      <li><a routerLink="/products">Productos</a></li>
-      <li><a routerLink="/sales">Ventas</a></li>
+<div class="bg-violet-300 h-[100svh] w-full" *ngIf="isSidebarOpen()">
+  <button class="flex p-2 text-2xl" (click)="Open()">✕</button>
+  <div
+    class="flex flex-col items-center justify-center h-[80svh] pr-5 pl-5 space-y-4"
+  >
+    <ul *ngFor="let nav of SidebarNavegation">
+      <li>
+        <a routerLink="{{ nav.href }}">{{ nav.name }}</a>
+      </li>
     </ul>
   </div>
 </div>

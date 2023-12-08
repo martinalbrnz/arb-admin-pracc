@@ -1,19 +1,21 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { sidebarRoutes } from './sidebarRoutes';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
-  isSidebarOpen = false;
+  public SidebarNavegation = sidebarRoutes;
 
-  toggleSidebar() {
-    console.log(this.isSidebarOpen);
-    this.isSidebarOpen = !this.isSidebarOpen;
+  isSidebarOpen = signal(false);
+
+  Open() {
+    this.isSidebarOpen.update((isOpen: boolean) => !isOpen);
   }
 }

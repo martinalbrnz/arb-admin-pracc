@@ -6,15 +6,13 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './sidebar-item.component.html',
-  styleUrl: './sidebar-item.component.scss'
+  styleUrl: './sidebar-item.component.scss',
 })
 export class SidebarItemComponent {
-
-  @Input() itemData!: RouteItem
-
+  @Input() itemData!: RouteItem;
 }
 
 export interface RouteItem {
-  label: string
-  href: string
+  label: string;
+  href: string;
 }

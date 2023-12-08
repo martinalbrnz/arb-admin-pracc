@@ -13,31 +13,31 @@ import { LoginService } from '@services/login/login.service'
 })
 
 export class LoginComponent {
-  constructor (private loginService: LoginService) {}
+  constructor(private loginService: LoginService) { }
 
   loginForm = new FormGroup({
-    username : new FormControl<string>('',[
-        Validators.required,
-        Validators.minLength(5),
-        Validators.maxLength(10)
-      ]),
-    password : new FormControl<string>('', 
-    [
+    username: new FormControl<string>('', [
       Validators.required,
-      Validators.minLength(4),
-      Validators.maxLength(15)
-    ])
-    
+      Validators.minLength(5),
+      Validators.maxLength(10)
+    ]),
+    password: new FormControl<string>('',
+      [
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(15)
+      ])
+
   })
 
   onSubmit() {
-    const {username, password } = this.loginForm.value
+    const { username, password } = this.loginForm.value
 
     if (!username || !password) return
 
     this.loginService.login(username, password).subscribe({
       next: (value) => {
-        console.log(value) 
+        console.log(value)
         // redirect to application
       },
       error: (error) => {

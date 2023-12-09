@@ -19,6 +19,4 @@ export class SidebarItemComponent {
 
   isOpen: boolean = this.sidebarService.isSidebarOpen;
   constructor(private sidebarService: SidebarService) {}
-
-  // ngOnInit(): void {}
 }

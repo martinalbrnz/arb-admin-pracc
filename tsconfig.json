@@ -10,7 +10,7 @@
       "@directives/*": ["./src/app/shared/directives/*"],
       "@guards/*": ["./src/app/guards/*"],
       "@modules/*": ["./src/app/modules/*"],
-      "@models/*": ["./src/app/models/*"],
+      "@interfaces/*": ["./src/app/interfaces/*"],
       "@pipes/*": ["./src/app/shared/pipes/*"],
       "@resolvers/*": ["./src/app/resolvers/*"],
       "@shared/*": ["./src/app/shared/*"],

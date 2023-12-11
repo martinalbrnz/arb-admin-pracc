@@ -18,5 +18,5 @@ export class SidebarItemComponent {
   public SidebarRoutes = routes;
 
   isOpen: boolean = this.sidebarService.isSidebarOpen;
-  constructor(private sidebarService: SidebarService) {}
+  constructor(private sidebarService: SidebarService) { }
 }

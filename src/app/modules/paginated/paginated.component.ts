@@ -9,6 +9,7 @@ import { PaginationData } from '@interfaces/pagination-data.interface';
   templateUrl: './paginated.component.html',
   styleUrl: './paginated.component.scss'
 })
+
 export class PaginatedComponent {
   @Input() pagination!: PaginationData;
 

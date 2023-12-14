@@ -4,3 +4,7 @@ export interface PaginationData {
 	currentPage: number
 	pages: number
 }
+export interface objItem {
+	id: number
+	name: string
+}

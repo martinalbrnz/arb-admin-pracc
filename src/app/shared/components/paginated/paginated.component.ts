@@ -18,7 +18,7 @@ export class PaginatedComponent {
 
   nextPage() {
     if (this.pagination.currentPage < this.pagination.pages) {
-      this.pagination.elementsPerPage += 5
+      this.pagination.elementsPerPage += 10
       this.pagination.currentPage += 1
       this.next.emit()
     }
@@ -26,8 +26,8 @@ export class PaginatedComponent {
   }
 
   prevPage() {
-    if (this.pagination.elementsPerPage > 0) {
-      this.pagination.elementsPerPage -= 5
+    if (this.pagination.currentPage > 1) {
+      this.pagination.elementsPerPage -= 10
       this.pagination.currentPage -= 1
       this.prev.emit()
     }
@@ -35,7 +35,7 @@ export class PaginatedComponent {
 
   constructor() {
     this.pagination =
-      { count: 100, pages: 10, elementsPerPage: 0, currentPage: 1 } //asigno valores por default
+      { count: 100, pages: 10, elementsPerPage: 10, currentPage: 1 } //asigno valores por default
 
   }
 

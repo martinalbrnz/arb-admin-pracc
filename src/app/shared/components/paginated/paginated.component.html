@@ -1,10 +1,10 @@
-<div class="w-5/12 h-full flex flex-col justify-between items-center bg-gray-100 px-1">
+<div class="w-5/12 h-full flex flex-col  items-center bg-gray-100 px-1">
     <div class=" flex justify-center items-center w-56 h-20 rounded bg-slate-200">
         <!-- list -->
     </div>
     <div class="flex w-full justify-center items-center mt-2 mb-2">
         <button
-            class="relative block rounded bg-transparent mx-1 px-2 py-1 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-black dark:hover:bg-neutral-700 dark:hover:text-white"
+            class="relative block rounded bg-transparent mx-1 px-2 py-1 text-sm text-neutral-600 transition-all duration-300 dark:hover:bg-neutral-700 dark:hover:text-white"
             (click)="prevPage()"
         >
             <span>&laquo;</span>
@@ -12,21 +12,47 @@
         </button>
 
         <div class="flex gap-1">
+            <div
+                *ngIf="pagination.currentPage>1"
+                (click)="prevPage()"
+                class="flex justify-center  items-center px-1.5 rounded cursor-pointer bg-slate-200"
+            >
+                {{pagination.currentPage-1}}
+            </div>
             <div class="flex justify-center  items-center px-1.5 rounded  bg-slate-400">
                 {{pagination.currentPage}}
             </div>
-
-            <div class="rounded p-0.5">
-                {{pagination.elementsPerPage}}
+            <div
+                (click)="nextPage()"
+                *ngIf="pagination.currentPage<pagination.pages"
+                class="flex justify-center  items-center px-1.5 rounded cursor-pointer bg-slate-200"
+            >
+                {{pagination.currentPage+1}}
+            </div>
+            <div
+                *ngIf="pagination.currentPage<2"
+                class="flex justify-center  items-center px-1.5 rounded  bg-slate-200"
+            >
+                {{pagination.currentPage+2}}
             </div>
 
-            <div class="rounded p-0.5">
+            <div
+                *ngIf="pagination.currentPage<pagination.pages-2"
+                class="rounded p-0.5"
+            >
+                ...
+            </div>
+
+            <div
+                *ngIf="pagination.currentPage<pagination.pages-1"
+                class="rounded p-0.5 "
+            >
                 {{pagination.pages}}
             </div>
         </div>
 
         <button
-            class="relative block rounded bg-transparent mx-1 px-2 py-1 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-black dark:hover:bg-neutral-700 dark:hover:text-white"
+            class="relative block rounded bg-transparent mx-1 px-2 py-1 text-sm text-neutral-600 transition-all duration-300 dark:hover:bg-neutral-700 dark:hover:text-white"
             (click)="nextPage()"
         >
             <span>&raquo;</span>
@@ -34,4 +60,6 @@
         </button>
 
     </div>
+    <div>Showing {{pagination.elementsPerPage}} of {{pagination.count}}</div>
+
 </div>

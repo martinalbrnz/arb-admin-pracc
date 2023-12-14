@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common'
 import { Component } from '@angular/core'
 import { RouterModule } from '@angular/router'
+import { PaginatedComponent } from '@components/paginated/paginated.component'
 import { FooterComponent } from '../../layout/footer/footer.component'
 import { HeaderComponent } from '../../layout/header/header.component'
 import { SidebarComponent } from '../../layout/sidebar/sidebar.component'
@@ -15,7 +16,8 @@ import { SidebarComponent } from '../../layout/sidebar/sidebar.component'
     RouterModule,
     SidebarComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    PaginatedComponent
   ]
 })
 export class AuthComponent {

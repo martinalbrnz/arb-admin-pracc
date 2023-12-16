@@ -1,41 +1,27 @@
-<!-- Sin desplegar Mobile -->
-
-<div class="flex md:hidden">
-  <div class="max-w-xs w-auto bg-violet-300">
+<div class="flex">
+  <div
+    *ngIf="!isOpen"
+    class="md:h-[100svh] bg-violet-300 w-auto max-w-xs md:w-[50px]"
+  >
     <button
-      *ngIf="!isSidebarOpen"
       class="flex p-2 text-2xl"
-      (click)="toggleSidebar()"
-    >
-      ☰
-    </button>
+      (click)="open()"
+    >☰</button>
+    <app-sidebar-item />
+
+    <div></div>
   </div>
 </div>
 
-<!-- Sin desplegar Desktop -->
-
-<div class="hidden md:flex bg-violet-500">
-  <div *ngIf="!isSidebarOpen" class="h-[100svh] bg-violet-300 w-[50px]">
-    <button class="flex p-2 text-2xl" (click)="toggleSidebar()">☰</button>
-    <div class="flex flex-col p-5 justify-center h-[80svh]">
-      <ul class="space-y-4">
-        <li>C</li>
-        <li>P</li>
-        <li>V</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- Desplegado Mobile/Desktop -->
-
-<div class="bg-violet-300 h-[100svh] w-full" *ngIf="isSidebarOpen">
-  <button class="flex p-2 text-2xl" (click)="toggleSidebar()">✕</button>
-  <div class="flex flex-col pr-5 pl-5 items-center justify-center h-[80svh]">
-    <ul class="space-y-4">
-      <li><a routerLink="/clients">Clientes</a></li>
-      <li><a routerLink="/products">Productos</a></li>
-      <li><a routerLink="/sales">Ventas</a></li>
-    </ul>
+<div
+  class="bg-violet-300 h-[100svh] w-full"
+  *ngIf="isOpen"
+>
+  <button
+    class="flex p-2 text-2xl"
+    (click)="open()"
+  >✕</button>
+  <div>
+    <app-sidebar-item />
   </div>
 </div>

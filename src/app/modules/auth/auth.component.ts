@@ -8,14 +8,16 @@ import { SidebarComponent } from '../../layout/sidebar/sidebar.component'
 @Component({
   selector: 'app-auth',
   standalone: true,
+  templateUrl: './auth.component.html',
+  styleUrl: './auth.component.scss',
   imports: [
     CommonModule,
     RouterModule,
     SidebarComponent,
     FooterComponent,
-    HeaderComponent,
-  ],
-  templateUrl: './auth.component.html',
-  styleUrl: './auth.component.scss',
+    HeaderComponent
+  ]
 })
-export class AuthComponent {}
+export class AuthComponent {
+
+}

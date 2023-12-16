@@ -8,7 +8,7 @@ import { SalesComponent } from '@modules/sales/sales.component'
 export const routes: Routes = [
     {
         path: "",
-component: AuthComponent,
+        component: AuthComponent,
         children: [
             {
                 path: "clients",

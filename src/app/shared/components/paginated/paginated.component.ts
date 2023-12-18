@@ -1,6 +1,6 @@
-import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { PaginationData } from '@interfaces/pagination-data.interface';
+import { CommonModule } from '@angular/common'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { PaginationData } from '@interfaces/pagination-data.interface'
 
 @Component({
   selector: 'app-paginated',
@@ -11,10 +11,9 @@ import { PaginationData } from '@interfaces/pagination-data.interface';
 })
 
 export class PaginatedComponent {
-  @Input() pagination: PaginationData;
-  @Output() prev = new EventEmitter<number>();
-  @Output() next = new EventEmitter<number>();
-
+  @Input() pagination: PaginationData
+  @Output() prev = new EventEmitter<number>()
+  @Output() next = new EventEmitter<number>()
 
   nextPage() {
     if (this.pagination.currentPage < this.pagination.pages) {

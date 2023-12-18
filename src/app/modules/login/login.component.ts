@@ -1,19 +1,28 @@
 import { CommonModule } from '@angular/common'
 import { Component } from '@angular/core'
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
+import { Router } from '@angular/router'
+import type { User } from '@interfaces/user.interface'
+import { CurrentUserService } from '@services/currentUser/current-user.service'
 import { LoginService } from '@services/login/login.service'
+import { TokenService } from '@services/token/token.service'
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  providers: [LoginService],
+  providers: [LoginService, TokenService, CurrentUserService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 
 export class LoginComponent {
-  constructor(private loginService: LoginService) { }
+  constructor(
+    private loginService: LoginService, 
+    private tokenService: TokenService, 
+    private currentUserService: CurrentUserService,
+    private router: Router
+    ) { }
 
   loginForm = new FormGroup({
     username: new FormControl<string>('', [
@@ -37,8 +46,15 @@ export class LoginComponent {
 
     this.loginService.login(username, password).subscribe({
       next: (value) => {
-        console.log(value)
-        // redirect to application
+        const { data, RTO, ATO } = value as {RTO: string, ATO: string, data: User}
+
+        if (RTO && ATO && data) {
+          this.currentUserService.setCurrentUser(data)
+          this.tokenService.setATO(ATO)
+          this.tokenService.setRTO(RTO)
+        }
+       
+        this.router.navigateByUrl('/')
       },
       error: (error) => {
         console.error(error)

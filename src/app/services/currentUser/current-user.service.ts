@@ -5,7 +5,8 @@ import { User } from '@interfaces/user.interface'
   providedIn: 'root'
 })
 export class CurrentUserService {
-  #currentUser =  signal<User | null>(JSON.parse(localStorage.getItem('currentUser') ?? '') ?? '')
+
+  #currentUser = signal<User | null>(JSON.parse(localStorage.getItem('currentUser') ?? '') ?? '')
 
   get currentUser(): User | null {
     return this.#currentUser()
@@ -20,4 +21,5 @@ export class CurrentUserService {
     localStorage.removeItem('currentUser')
     this.#currentUser.set(null)
   }
+
 }

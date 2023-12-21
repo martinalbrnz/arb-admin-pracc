@@ -1,5 +1,5 @@
-import { SidebarRoutes } from '../interfaces/sidebar-item.interface';
-import { RoutesEnum } from './routes';
+import { SidebarRoutes } from '../interfaces/sidebar-item.interface'
+import { RoutesEnum } from './routes'
 
 export const routes: SidebarRoutes[] = [
   { label: 'Home', href: RoutesEnum.Home, name: 'Inicio', icon: 'I' },
@@ -11,4 +11,4 @@ export const routes: SidebarRoutes[] = [
     icon: 'P',
   },
   { label: 'Sales', href: RoutesEnum.Sales, name: 'Ventas', icon: 'V' },
-];
+]

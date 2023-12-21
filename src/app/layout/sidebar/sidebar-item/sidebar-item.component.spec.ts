@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { SidebarItemComponent } from './sidebar-item.component';
+import { SidebarItemComponent } from './sidebar-item.component'
 
 describe('SidebarItemComponent', () => {
-  let component: SidebarItemComponent;
-  let fixture: ComponentFixture<SidebarItemComponent>;
+  let component: SidebarItemComponent
+  let fixture: ComponentFixture<SidebarItemComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [SidebarItemComponent]
     })
-    .compileComponents();
+    .compileComponents()
     
-    fixture = TestBed.createComponent(SidebarItemComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(SidebarItemComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

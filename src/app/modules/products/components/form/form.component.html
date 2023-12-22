@@ -1,40 +1,43 @@
 <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 group">
 
-    <div class="mb-4">
+    <div
+        class="mb-4"
+        *ngfor="let p of product"
+    >
 
         <label
             class="block text-gray-700 text-sm font-bold mb-2"
             for="name"
         >
-            Name:
+            Name: {{p.name}}
         </label>
 
         <label
             class="block text-gray-700 text-sm font-bold mb-2"
             for="price"
         >
-            Price:
+            Price: {{p.price}}
         </label>
 
         <label
             class="block text-gray-700 text-sm font-bold mb-2"
             for="description"
         >
-            Description:
+            Description: {{p.description}}
         </label>
 
         <label
             class="block text-gray-700 text-sm font-bold mb-2"
             for="stock"
         >
-            Stock:
+            Stock: {{p.stock}}
         </label>
 
         <label
             class="block text-gray-700 text-sm font-bold mb-2"
             for="isActive"
         >
-            isActive:
+            isActive: {{p.isActive}}
         </label>
 
     </div>

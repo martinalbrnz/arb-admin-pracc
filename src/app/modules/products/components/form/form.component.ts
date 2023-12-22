@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { Products } from '@interfaces/form-products.interface';
 
 @Component({
   selector: 'app-form',
@@ -9,5 +10,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './form.component.scss'
 })
 export class FormComponent {
+
+  @Input() product!: Products;
+
+  constructor() {
+    this.product = { name: "product1", price: 25, description: "", stock: 45, isActive: true } //asigno valores por default
+  }
 
 }

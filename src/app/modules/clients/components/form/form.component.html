@@ -1,0 +1,19 @@
+<app-card>
+  <form [formGroup]="clientForm" (ngSubmit)="onSubmit()" class="text-white flex flex-col justify-between items-center gap-2">
+    <label class="mr-auto" for="name">Nombre</label>
+    <b *ngIf="clientForm.controls.name.errors && clientForm.controls.name.dirty" class="text-red-500 mr-auto">Ingrese un nombre válido</b>
+    <input id="name" name="name" formControlName="name" class="w-full p-2 text-black outline-none border-none bg-gray-100 focus:bg-white outline-offset-0 focus:outline-dashed focus:outline-white focus:outline-[1px]" type="text" placeholder="Pepe" />
+    
+
+    <label class="mr-auto" for="phone">Teléfono</label>
+    <b *ngIf="clientForm.controls.phone.errors && clientForm.controls.phone.dirty" class="text-red-500 mr-auto">Ingrese un teléfono válido</b>
+    <input id="phone" name="phone" formControlName="phone" class="w-full p-2 text-black outline-none border-none bg-gray-100 focus:bg-white outline-offset-0 focus:outline-dashed focus:outline-white focus:outline-[1px]" type="text" placeholder="+541132455551" />
+    
+    
+    <label class="mr-auto" for="email">E-mail</label>
+    <b *ngIf="clientForm.controls.email.errors && clientForm.controls.email.dirty" class="text-red-500 mr-auto">Ingrese un email válido</b>
+    <input id="email" name="email" formControlName="email" class="w-full p-2 text-black outline-none border-none bg-gray-100 focus:bg-white outline-offset-0 focus:outline-dashed focus:outline-white focus:outline-[1px]" type="text" placeholder="pepe@yourmail.com" />
+
+    <button class="bg-gray-500 w-1/2 px-3 py-2 rounded border-none outline-none hover:bg-gray-700 transition-colors">Enviar</button>
+  </form>
+</app-card>

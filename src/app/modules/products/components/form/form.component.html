@@ -1,44 +1,95 @@
 <form
-    class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 group w-max"
-    *ngFor="let p of product"
+    class="bg-white flex flex-wrap w-max dshadow-md rounded px-8 pt-6 pb-8 mb-4 group"
+    [formGroup]="productForm"
 >
 
     <div class="mb-4">
 
         <label
-            class="block text-gray-700 text-sm font-bold mb-2"
+            class="block pt-2 text-gray-700 text-sm font-bold mb-2"
             for="name"
         >
-            Name: {{p.name}}
+            Nombre del producto:
         </label>
 
+        <span
+            *ngIf="productForm.controls.name.errors && productForm.controls.name.dirty"
+            class="mt-2 text-sm text-red-500"
+        >
+            Nombre demasiado corto o largo
+        </span>
+        <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            type="text"
+            formControlName="name"
+            required
+        >
+
         <label
-            class="block text-gray-700 text-sm font-bold mb-2"
+            class="block pt-2 text-gray-700 text-sm font-bold mb-2"
             for="price"
         >
-            Price: {{p.price}}
+            Precio:
         </label>
 
+        <span
+            *ngIf="productForm.controls.price.errors && productForm.controls.price.dirty"
+            class="mt-2 text-sm text-red-500"
+        >
+            Ingrese un precio válido
+        </span>
+
+        <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            type="text"
+            formControlName="price"
+            required
+        >
+
         <label
-            class="block text-gray-700 text-sm font-bold mb-2"
+            class="block pt-2 text-gray-700 text-sm font-bold mb-2"
             for="description"
         >
-            Description: {{p.description}}
+            Descripción:
         </label>
+        <span
+            *ngIf="productForm.controls.description.errors && productForm.controls.description.dirty"
+            class="mt-2 text-sm text-red-500"
+        >
+            Ingrese una descriptción breve
+        </span>
+        <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            type="text"
+            formControlName="description"
+            required
+        >
 
         <label
-            class="block text-gray-700 text-sm font-bold mb-2"
+            class="block pt-2 text-gray-700 text-sm font-bold mb-2"
             for="stock"
         >
-            Stock: {{p.stock}}
+            Stock:
         </label>
-
-        <label
-            class="block text-gray-700 text-sm font-bold mb-2"
-            for="isActive"
+        <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            type="text"
+            formControlName="stock"
+            required
         >
-            isActive: {{p.isActive}}
-        </label>
+
+        <button
+            class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold mt-3 py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:pointer-events-none disabled:opacity-30"
+            type="submit"
+            [disabled]="productForm.invalid"
+        >
+            Enviar
+        </button>
+
 
     </div>
 

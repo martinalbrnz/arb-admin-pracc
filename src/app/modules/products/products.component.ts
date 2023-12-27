@@ -1,12 +1,13 @@
-import { Component } from '@angular/core'
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormComponent } from "./components/form/form.component";
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './products.component.html',
-  styleUrl: './products.component.scss'
+  styleUrl: './products.component.scss',
+  imports: [CommonModule, FormComponent]
 })
 export class ProductsComponent {
 

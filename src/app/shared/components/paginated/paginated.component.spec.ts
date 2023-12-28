@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { SidebarItemComponent } from './sidebar-item.component'
+import { PaginatedComponent } from './paginated.component'
 
-describe('SidebarItemComponent', () => {
-  let component: SidebarItemComponent
-  let fixture: ComponentFixture<SidebarItemComponent>
+describe('PaginatedComponent', () => {
+  let component: PaginatedComponent
+  let fixture: ComponentFixture<PaginatedComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SidebarItemComponent]
+      imports: [PaginatedComponent]
     })
     .compileComponents()
     
-    fixture = TestBed.createComponent(SidebarItemComponent)
+    fixture = TestBed.createComponent(PaginatedComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })

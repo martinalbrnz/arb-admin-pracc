@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing'
 
-import { SidebarService } from './sidebar-service.service'
+import { ApiService } from './api.service'
 
-describe('SidebarServiceService', () => {
-  let service: SidebarService
+describe('ApiService', () => {
+  let service: ApiService
 
   beforeEach(() => {
     TestBed.configureTestingModule({})
-    service = TestBed.inject(SidebarService)
+    service = TestBed.inject(ApiService)
   })
 
   it('should be created', () => {

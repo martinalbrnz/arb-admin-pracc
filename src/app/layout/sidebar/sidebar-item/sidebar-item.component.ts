@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { SidebarService } from '@services/sidebar/sidebar-service.service';
-import { RouteItem } from 'src/app/interfaces/sidebar-item.interface';
-import { routes } from '../../../constants/sidebar-routes';
+import { CommonModule } from '@angular/common'
+import { Component, Input } from '@angular/core'
+import { RouterModule } from '@angular/router'
+import { SidebarService } from '@services/sidebar/sidebar-service.service'
+import { RouteItem } from 'src/app/interfaces/sidebar-item.interface'
+import { routes } from '../../../constants/sidebar-routes'
 
 @Component({
   selector: 'app-sidebar-item',
@@ -13,10 +13,10 @@ import { routes } from '../../../constants/sidebar-routes';
   styleUrl: './sidebar-item.component.scss',
 })
 export class SidebarItemComponent {
-  @Input() itemData!: RouteItem;
+  @Input() itemData!: RouteItem
 
-  public SidebarRoutes = routes;
+  public SidebarRoutes = routes
 
-  isOpen: boolean = this.sidebarService.isSidebarOpen;
-  constructor(private sidebarService: SidebarService) {}
+  isOpen: boolean = this.sidebarService.isSidebarOpen
+  constructor(private sidebarService: SidebarService) { }
 }
